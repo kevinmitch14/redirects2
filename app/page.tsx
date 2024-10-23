@@ -1,5 +1,6 @@
 "use client";
 
+import { unstable_rethrow } from "next/navigation";
 import { action } from "./actions";
 
 export default function Home() {
@@ -11,8 +12,7 @@ export default function Home() {
             e.preventDefault();
             await action();
           } catch (error) {
-            console.log(error);
-            alert("Error");
+            unstable_rethrow(error);
           }
         }}
       >
