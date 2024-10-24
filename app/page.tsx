@@ -1,9 +1,7 @@
-"use client";
+import { headers } from "next/headers";
 
-import { unstable_rethrow } from "next/navigation";
-import { action } from "./actions";
-
-export default function Home() {
+export default async function Home() {
+  await headers();
   return (
     <div>
       <form
